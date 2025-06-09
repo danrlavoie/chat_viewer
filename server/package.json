@@ -1,0 +1,21 @@
+{
+  "name": "chat_viewer_server",
+  "version": "1.0.0",
+  "description": "Express backend for Google Chat history viewer",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "@types/express": "^4.17.17",
+    "@types/cors": "^2.8.13",
+    "ts-node": "^10.9.1"
+  }
+}

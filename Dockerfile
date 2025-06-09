@@ -1,10 +1,10 @@
 # Build stage for React frontend
 FROM node:20-slim AS frontend-build
 WORKDIR /app/frontend
-COPY ./src ./src
-COPY ./public ./public
-COPY ./package*.json ./
-COPY ./tsconfig.json ./
+COPY ./frontend/src ./src
+COPY ./frontend/public ./public
+COPY ./frontend/package*.json ./
+COPY ./frontend/tsconfig.json ./
 RUN npm install
 RUN npm run build
 

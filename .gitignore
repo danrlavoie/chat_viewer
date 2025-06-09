@@ -1,5 +1,6 @@
 # dependencies
-/node_modules
+frontend/node_modules
+server/node_modules
 /.pnp
 .pnp.js
 
@@ -7,7 +8,8 @@
 /coverage
 
 # production
-/build
+frontend/build
+server/dist
 
 # misc
 .DS_Store
@@ -34,7 +36,7 @@ yarn-error.log*
 *.pid.lock
 
 # Config files with sensitive data
-/config/config.json
+/config
 
 # Optional npm cache directory
 .npm
