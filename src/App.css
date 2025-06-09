@@ -1,0 +1,66 @@
+/* App.css */
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto_SemiCondensed-Regular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fcfefc;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden; /* Prevent body scrolling */
+}
+
+.App {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent app scrolling */
+}
+
+.header {
+    flex-shrink: 0; /* Prevent header from shrinking */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main content area */
+.chat {
+    flex: 1; /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent chat container scrolling */
+}
+
+/* Messages container */
+.messages {
+    flex: 1;
+    overflow-y: auto; /* Only allow scrolling in messages */
+    padding: 1rem;
+}
+
+.chat-selector {
+    align-self: start;
+    padding: 10px;
+}
