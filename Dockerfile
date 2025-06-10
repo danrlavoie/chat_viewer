@@ -29,19 +29,11 @@ COPY --from=backend-build /app/backend/dist ./backend/dist
 COPY --from=backend-build /app/backend/node_modules ./backend/node_modules
 COPY --from=backend-build /app/backend/package*.json ./backend/
 
-# Copy config directory (excluding sensitive files)
-COPY ./config ./config
+# Only expose backend port
+EXPOSE 5000
 
-# Create directory for chat data
-RUN mkdir -p /app/data/GoogleChat/Groups
-
-# Expose ports
-EXPOSE 3000 5000
-
-# Create start script
+# Simplify start script to only run the backend
 RUN echo '#!/bin/sh\n\
-cd /app/backend && node dist/server.js & \n\
-cd /app/frontend && npx serve -s build -l 3000\n\
-wait' > /app/start.sh && chmod +x /app/start.sh
+cd /app/backend && node dist/index.js' > /app/start.sh && chmod +x /app/start.sh
 
 CMD ["/app/start.sh"]
